@@ -1,0 +1,62 @@
+---
+title: "Autogenerate Snakemake workflow templates"
+author: "Kieran R Campbell"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+devtools::load_all("/Users/kierancampbell/projects/autosmk/")
+```
+
+# Introduction
+
+
+
+# Example usage
+
+
+```{r}
+inputs <- c(
+  'important_csv' = 'data/input_{id}.csv',
+  'compressed_R_object' = 'data/input_{id}.rds'
+)
+
+outputs <- c(
+  'figure' = 'figs/fig_{id}.png'
+)
+```
+
+Call autosmk:
+
+```{r}
+dir <- tempdir()
+
+autosmk('testrule',
+        inputs,
+        outputs,
+        dir,
+        open = FALSE)
+```
+
+
+```{r}
+cat(readr::read_file(file.path(dir, "testrule.smk")))
+```
+
+```{r}
+cat(readr::read_file(file.path(dir, "testrule.R")))
+
+```
+
+
+

@@ -1,0 +1,16 @@
+Package: autosmk
+Type: Package
+Title: Autogenerate templates for Snakemake rules and R scripts
+Version: 0.1.0
+Author: Kieran R Campbell
+Maintainer: Kieran R Campbell
+Description: autosmk generates templates for Snakemake rules and corresponding R scripts given a list of
+    input and output names and file patterns
+License: Apache 2.0
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    readr
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
